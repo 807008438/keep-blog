@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="包子">
+    
+    <title>
+        
+            ES6常用语法特性 |
+        
+        包子
+    </title>
+    
+<link rel="stylesheet" href="/keep-blog/css/style.css">
+
+    <link rel="shortcut icon" href="/keep-blog/images/avatar.jpg">
+    
+<link rel="stylesheet" href="/keep-blog/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"807008438.github.io","root":"/keep-blog/","language":"en","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"https://807008438.github.io/keep-blog/images/avatar.jpg","favicon":"/images/avatar.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"https://807008438.github.io/keep-blog/images/bg.svg","description":"加入光荣的进化吧"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="https://807008438.github.io/keep-blog/images/avatar.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                包子
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/keep-blog/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/keep-blog/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/keep-blog/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/keep-blog/archives">归档</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">ES6常用语法特性</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="https://807008438.github.io/keep-blog/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">包子</span>
+                        
+                            <span class="author-label">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-11-25 18:59:53
+    </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="ES6-常用特性"><a href="#ES6-常用特性" class="headerlink" title="ES6 常用特性"></a>ES6 常用特性</h1><h2 id="修正"><a href="#修正" class="headerlink" title="修正"></a>修正</h2><p><strong>ES6</strong>是<span style="background-color: #fff5f5;color: #ff502c;">ECMA</span>为<span style="background-color: #fff5f5;color: #ff502c;">JavaScript</span>指定的第六个标准版本</p>
+<p>ES6 更新的内容主要分为一下几点</p>
+<p>注:该文讲 ES6 常用方法，可能不全</p>
+<ul>
+<li><strong>表达式</strong>：声明、解构赋值</li>
+<li><strong>内置对象</strong>：字符串拓展、数值拓展、对象拓展、数组拓展、Symbol、Set、Map、Proxy、Reflect</li>
+<li><strong>语句与运算</strong>：Class、Module、Iterator</li>
+<li><strong>异步编程</strong>：Promise、Generator、Async</li>
+<li><strong>数据类型</strong><ul>
+<li><strong>Null</strong></li>
+<li><strong>Undefined</strong></li>
+<li><strong>String</strong></li>
+<li><strong>Number</strong></li>
+<li><strong>Boolean</strong></li>
+<li><strong>Object</strong>：包含（<span style="background-color: #fff5f5;color: #ff502c;">Array</span>、<span style="background-color: #fff5f5;color: #ff502c;">Function</span>、<span style="background-color: #fff5f5;color: #ff502c;">Date</span>、<span style="background-color: #fff5f5;color: #ff502c;">RegExp</span>、<span style="background-color: #fff5f5;color: #ff502c;">Error</span>）</li>
+<li><strong>Symbol</strong></li>
+</ul>
+</li>
+<li><strong>原生构造函数</strong><ul>
+<li><strong>String()</strong></li>
+<li><strong>Number()</strong></li>
+<li><strong>Boolean()</strong></li>
+<li><strong>Array()</strong></li>
+<li><strong>Object()</strong></li>
+<li><strong>Function()</strong></li>
+<li><strong>Date()</strong></li>
+<li><strong>RegExp()</strong></li>
+<li><strong>Error()</strong></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="ES2015"><a href="#ES2015" class="headerlink" title="ES2015"></a>ES2015</h2><h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><ul>
+<li><p><strong>const 命令</strong>：声明常量</p>
+</li>
+<li><p><strong>let 命令</strong>：声明变量</p>
+</li>
+<li><p>作用域</p>
+<ul>
+<li><strong>全局作用域</strong></li>
+<li><strong>函数作用域</strong>：<span style="background-color: #fff5f5;color: #ff502c;">function() {}</span></li>
+<li><strong>块级作用域</strong>：<span style="background-color: #fff5f5;color: #ff502c;">{}</span></li>
+</ul>
+</li>
+<li><p>作用范围</p>
+<ul>
+<li><span style="background-color: #fff5f5;color: #ff502c;">var 命令</span>在全局代码中执行</li>
+<li><span style="background-color: #fff5f5;color: #ff502c;">const 命令和 let 命令</span>只能在代码块中执行</li>
+</ul>
+</li>
+<li><p>赋值使用</p>
+<ul>
+<li><span style="background-color: #fff5f5;color: #ff502c;">const 命令</span>声明变量必须赋值</li>
+<li><span style="background-color: #fff5f5;color: #ff502c;">let 命令</span>声明变量后可立马赋值或使用后赋值</li>
+</ul>
+</li>
+<li><p>声明方法：<span style="background-color: #fff5f5;color: #ff502c;">var</span>、<span style="background-color: #fff5f5;color: #ff502c;">const</span>、<span style="background-color: #fff5f5;color: #ff502c;">let</span>、<span style="background-color: #fff5f5;color: #ff502c;">function</span>、<span style="background-color: #fff5f5;color: #ff502c;">class</span>、<span style="background-color: #fff5f5;color: #ff502c;">import</span></p>
+</li>
+<li><p>不允许重复声明变量：<span style="background-color: #fff5f5;color: #ff502c;">const</span>、<span style="background-color: #fff5f5;color: #ff502c;">let</span></p>
+</li>
+<li><p>未定义就会报错：<span style="background-color: #fff5f5;color: #ff502c;">const 命令</span>和<span style="background-color: #fff5f5;color: #ff502c;">let 命令</span>不存在变量提升</p>
+</li>
+<li><p>暂时性死区：在代码块内使用<span style="background-color: #fff5f5;color: #ff502c;">const 命令</span>和<span style="background-color: #fff5f5;color: #ff502c;">let 命令</span>声明变量之前，该变量都不可用</p>
+</li>
+</ul>
+<hr>
+<h3 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>字符串解构</strong>：<span style="background-color: #fff5f5;color: #ff502c;">const [ a, b, c, d, e ] = “baozi”</span></li>
+<li><input checked="" disabled="" type="checkbox"> <strong>数值解构</strong>：<span style="background-color: #fff5f5;color: #ff502c;">const {  toString: s  } = 123  // s === Number.prototype.toString</span></li>
+<li><input checked="" disabled="" type="checkbox"> <strong>布尔解构</strong>：<span style="background-color: #fff5f5;color: #ff502c;">const {  toString: b  } = true </span></li>
+<li><input checked="" disabled="" type="checkbox"> <strong>对象的结构</strong>：<ul>
+<li>形式：<span style="background-color: #fff5f5;color: #ff502c;">const { x, y } = { x : 1 , y : 2 }</span></li>
+<li>默认：<span style="background-color: #fff5f5;color: #ff502c;">const { x, y = 1 } = { x : 1 , y : 2 }</span></li>
+<li>改名：<span style="background-color: #fff5f5;color: #ff502c;">const { x, y : z } = { x : 1 , y : 2}</span></li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>数组解构</strong>：<ul>
+<li>规则：数据解构具有<span style="background-color: #fff5f5;color: #ff502c;">Iterator 接口</span>可采用数组形式的解构赋值</li>
+<li>形式：<span style="background-color: #fff5f5;color: #ff502c;">const [ x, y ] = [ 1, 2 ]</span></li>
+<li>默认：<span style="background-color: #fff5f5;color: #ff502c;">const [ x, y = 2 ] = [ 1 ]</span></li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>函数参数解构</strong>：<ul>
+<li>数组解构：<span style="background-color: #fff5f5;color: #ff502c;">function fn ( [ x = 1, y = 2 ] ) { }</span></li>
+<li>对象解构：<span style="background-color: #fff5f5;color: #ff502c;">function fn ( { x = 1, y = 2 } = {} ) {}</span></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="字符串拓展"><a href="#字符串拓展" class="headerlink" title="字符串拓展"></a>字符串拓展</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>Unicode 表示法</strong>：<span style="background-color: #fff5f5;color: #ff502c;">大括号包含</span>表示 Unicode 字符( <span style="background-color: #fff5f5;color: #ff502c;">\u{0xXX}</span>或<span style="background-color: #fff5f5;color: #ff502c;">\u{0xxx}</span> )</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>字符串遍历</strong>：可通过<span style="background-color: #fff5f5;color: #ff502c;">for-of</span>边离字符串</li>
+<li><input checked="" disabled="" type="checkbox"> **includes()**：是否存在指定字符串，返回一个布尔值</li>
+<li><input checked="" disabled="" type="checkbox"> **startsWith()**：是否存在字符串头部指定字符串，返回一个布尔值</li>
+<li><input checked="" disabled="" type="checkbox"> **endsWith()**：食肉存在字符串尾部指定字符串，返回一个布尔值</li>
+</ul>
+<hr>
+<h3 id="数值扩展"><a href="#数值扩展" class="headerlink" title="数值扩展"></a>数值扩展</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> **Number.parseInt()**：返回转换值得整数部分</li>
+<li><input checked="" disabled="" type="checkbox"> **Number.parseFloat()**：返回转换值得浮点数部分</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>Number.isNaN</strong>：是否为 NaN</li>
+</ul>
+<hr>
+<h3 id="对象拓展"><a href="#对象拓展" class="headerlink" title="对象拓展"></a>对象拓展</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>super 关键字</strong>：指向当前对象的原型对下个（只能用在对象的简写方法中<span style="background-color: #fff5f5;color: #ff502c;">method() {}</span>）</li>
+<li><input checked="" disabled="" type="checkbox"> **Object.is()**：对比两值是否相等</li>
+<li><input checked="" disabled="" type="checkbox"> **Object.assign()**：合并对象（浅拷贝），返回原对象</li>
+<li><input checked="" disabled="" type="checkbox"> **Object.getPrototypeOf()**：返回对象的原型对象</li>
+<li><input checked="" disabled="" type="checkbox"> **Object.setPrototypeOf()**：设置对象的原型对象</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>proto</strong>：返回或设置对象的原型对象</li>
+</ul>
+<p><strong>对象属性遍历</strong></p>
+<ul>
+<li>遍历<ul>
+<li><span style="background-color: #fff5f5;color: #ff502c;">for-in</span>：遍历对象<span style="background-color: #fff5f5;color: #ff502c;">自身可继承可枚举</span>属性</li>
+<li><span style="background-color: #fff5f5;color: #ff502c;">Object.keys()</span>：返回对象<span style="background-color: #fff5f5;color: #ff502c;">自身可枚举</span>属性键组成的数组</li>
+<li><span style="background-color: #fff5f5;color: #ff502c;">Object.values()</span>：返回对象<span style="background-color: #fff5f5;color: #ff502c;">自身可枚举</span>属性值的数组</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="数组拓展"><a href="#数组拓展" class="headerlink" title="数组拓展"></a>数组拓展</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>拓展运算符（…）</strong>：用于展开数组</li>
+<li><input checked="" disabled="" type="checkbox"> **Aarry.from()**：转换具有<span style="background-color: #fff5f5;color: #ff502c;">Iterator 接口</span>的数据解构为真正数组，返回新数组<ul>
+<li>类数组对象：<span style="background-color: #fff5f5;color: #ff502c;">包括 length 的对象</span>、<span style="background-color: #fff5f5;color: #ff502c;">Arguments 对象</span>、<span style="background-color: #fff5f5;color: #ff502c;">自身可枚举</span>、<span style="background-color: #fff5f5;color: #ff502c;">Nodelist 对象</span></li>
+<li>可遍历对象：<span style="background-color: #fff5f5;color: #ff502c;">String</span>、<span style="background-color: #fff5f5;color: #ff502c;">Set 结构</span>、<span style="background-color: #fff5f5;color: #ff502c;">Map 结构</span>、<span style="background-color: #fff5f5;color: #ff502c;">Generator 函数</span></li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> **Array.of()**：转换一组值为真正数组，返回新数组</li>
+<li><input checked="" disabled="" type="checkbox"> **copyWithin()**：把指定位置的成员复制到其他位置，返回原数组</li>
+<li><input checked="" disabled="" type="checkbox"> **find()**：返回一个符合条件的成员</li>
+<li><input checked="" disabled="" type="checkbox"> **findIndex()**：返回第一个符合条件的成员索引值</li>
+<li><input checked="" disabled="" type="checkbox"> **fill()**：根据指定值填充整个数组，返回原数组</li>
+<li><input checked="" disabled="" type="checkbox"> **keys()**：返回以索引值为遍历器的对象</li>
+<li><input checked="" disabled="" type="checkbox"> **values()**：返回以属性值为遍历器的对象</li>
+<li><input checked="" disabled="" type="checkbox"> **entries()**：返回以索引值和属性值为遍历器的对象</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>数组空位</strong>：ES6 明确将数组空位转为<span style="background-color: #fff5f5;color: #ff502c;">undefined</span>（空位处理不一，建议避免出现）</li>
+</ul>
+<hr>
+<h3 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h3><ul>
+<li><p><strong>定义</strong>：独一无二的值</p>
+</li>
+<li><p><strong>声明</strong>：<span style="background-color: #fff5f5;color: #ff502c;">cosnt set = Symbol(str)</span></p>
+</li>
+<li><p><strong>入参</strong>：字符串（可选）</p>
+</li>
+<li><p><strong>方法</strong></p>
+<ul>
+<li>**Symbol()**：创建以参数作为描述的<span style="background-color: #fff5f5;color: #ff502c;">Symbol 值</span>（不登记在全局环境）</li>
+<li>**Symbol.for()**：创建以参数作为描述的<span style="background-color: #fff5f5;color: #ff502c;">Symbol 值</span>，如存在此参数则返回原有的<span style="background-color: #fff5f5;color: #ff502c;">Symbol 值</span> （先搜索后船舰，等级在全局环境中）</li>
+<li>**Symbol.keyFor()**：返回已登记的<span style="background-color: #fff5f5;color: #ff502c;">Symbol 值</span>的描述(只能返回<span style="background-color: #fff5f5;color: #ff502c;">Symbol.for()</span><code>的</code><span style="background-color: #fff5f5;color: #ff502c;">key</span>)</li>
+<li>**Object.getOwnPropertySymbols()**：返回对象中所有用作属性名的<span style="background-color: #fff5f5;color: #ff502c;">Symbol 值</span>的数组</li>
+</ul>
+</li>
+<li><p><strong>内置</strong></p>
+<ul>
+<li><strong>Symbol.hasInstance</strong>：指向一个内部方法，当其他对象使用<span style="background-color: #fff5f5;color: #ff502c;">instanceof 运算符</span>判断是否为此对象的实例时会调用此方法</li>
+<li><strong>Symbol.isConcatSpreadable</strong>：指向一个布尔，定义对象用于<span style="background-color: #fff5f5;color: #ff502c;">Array.protorype.concat()</span>时是否可展开</li>
+<li><strong>Symbol.species</strong>：指向一个构造函数，当实例对象使用自身构造函数时会调用指定的构造函数</li>
+<li><strong>Symbol.match</strong>：指向一个函数，当实例对象被<span style="background-color: #fff5f5;color: #ff502c;">String.prototype.match()</span>调用时会重新定义<span style="background-color: #fff5f5;color: #ff502c;">match()</span>的行为</li>
+<li><strong>Symbol.replace</strong>：指向一个函数，当实例对象被、<span style="background-color: #fff5f5;color: #ff502c;">String.prototype.replace()</span>调用时会重新定义<span style="background-color: #fff5f5;color: #ff502c;">replace()</span>的行为</li>
+<li><strong>Symbol.search</strong>：指向一个函数，当实例对象被<span style="background-color: #fff5f5;color: #ff502c;">String.prototype.search()</span>调用时会重新定义<span style="background-color: #fff5f5;color: #ff502c;">search()</span>的行为</li>
+<li><strong>Symbol.split</strong>：指向一个函数，当实例对象被<span style="background-color: #fff5f5;color: #ff502c;">String.prototype.split()</span>调用时会重新定义<span style="background-color: #fff5f5;color: #ff502c;">split()</span>的行为</li>
+<li><strong>Symbol.iterator</strong>：指向一个默认遍历器方法，当实例对象执行<span style="background-color: #fff5f5;color: #ff502c;">for-of</span>时会调用指定的默认遍历器</li>
+<li><strong>Symbol.toPrimitive</strong>：指向一个函数，当实例对象被转为原始类型的值时会返回此对象对应的原始类型值</li>
+<li><strong>Symbol.toStringTag</strong>：指向一个函数，当实例对象被<span style="background-color: #fff5f5;color: #ff502c;">Object.prototype.toString()</span>调用时其返回值会出现在<span style="background-color: #fff5f5;color: #ff502c;">toString()</span>返回的字符串之中表示对象的类型</li>
+<li><strong>Symbol.unscopables</strong>：指向一个对象，指定使用<span style="background-color: #fff5f5;color: #ff502c;">with</span>时哪些属性会被<span style="background-color: #fff5f5;color: #ff502c;">with 环境</span>排除</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：ES6常用语法特性</li>
+        <li>Post author：包子</li>
+        <li>Create time：2021-11-25 18:59:53</li>
+        <li>
+            Post link：https://807008438.github.io/keep-blog/2021/11/25/ES6常用语法/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2021</span>
+              -
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">包子</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ES6-%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7"><span class="nav-number">1.</span> <span class="nav-text">ES6 常用特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%AD%A3"><span class="nav-number">1.1.</span> <span class="nav-text">修正</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES2015"><span class="nav-number">1.2.</span> <span class="nav-text">ES2015</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E"><span class="nav-number">1.2.1.</span> <span class="nav-text">声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC"><span class="nav-number">1.2.2.</span> <span class="nav-text">解构赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%93%E5%B1%95"><span class="nav-number">1.2.3.</span> <span class="nav-text">字符串拓展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%80%BC%E6%89%A9%E5%B1%95"><span class="nav-number">1.2.4.</span> <span class="nav-text">数值扩展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E6%8B%93%E5%B1%95"><span class="nav-number">1.2.5.</span> <span class="nav-text">对象拓展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%8B%93%E5%B1%95"><span class="nav-number">1.2.6.</span> <span class="nav-text">数组拓展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Symbol"><span class="nav-number">1.2.7.</span> <span class="nav-text">Symbol</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/keep-blog/js/utils.js"></script>
+
+<script src="/keep-blog/js/main.js"></script>
+
+<script src="/keep-blog/js/header-shrink.js"></script>
+
+<script src="/keep-blog/js/back2top.js"></script>
+
+<script src="/keep-blog/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/keep-blog/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/keep-blog/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/keep-blog/js/left-side-toggle.js"></script>
+
+<script src="/keep-blog/js/libs/anime.min.js"></script>
+
+<script src="/keep-blog/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>

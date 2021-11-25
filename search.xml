@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>ES6常用语法特性</title>
+    <url>/keep-blog/2021/11/25/ES6%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="ES6-常用特性"><a href="#ES6-常用特性" class="headerlink" title="ES6 常用特性"></a>ES6 常用特性</h1><h2 id="修正"><a href="#修正" class="headerlink" title="修正"></a>修正</h2><p><strong>ES6</strong>是<span style="background-color: #fff5f5;color: #ff502c;">ECMA</span>为<span style="background-color: #fff5f5;color: #ff502c;">JavaScript</span>指定的第六个标准版本</p>
+<p>ES6 更新的内容主要分为一下几点</p>
+<p>注:该文讲 ES6 常用方法，可能不全</p>
+<ul>
+<li><strong>表达式</strong>：声明、解构赋值</li>
+<li><strong>内置对象</strong>：字符串拓展、数值拓展、对象拓展、数组拓展、Symbol、Set、Map、Proxy、Reflect</li>
+<li><strong>语句与运算</strong>：Class、Module、Iterator</li>
+<li><strong>异步编程</strong>：Promise、Generator、Async</li>
+<li><strong>数据类型</strong><ul>
+<li><strong>Null</strong></li>
+<li><strong>Undefined</strong></li>
+<li><strong>String</strong></li>
+<li><strong>Number</strong></li>
+<li><strong>Boolean</strong></li>
+<li><strong>Object</strong>：包含（<span style="background-color: #fff5f5;color: #ff502c;">Array</span>、<span style="background-color: #fff5f5;color: #ff502c;">Function</span>、<span style="background-color: #fff5f5;color: #ff502c;">Date</span>、<span style="background-color: #fff5f5;color: #ff502c;">RegExp</span>、<span style="background-color: #fff5f5;color: #ff502c;">Error</span>）</li>
+<li><strong>Symbol</strong></li>
+</ul>
+</li>
+<li><strong>原生构造函数</strong><ul>
+<li><strong>String()</strong></li>
+<li><strong>Number()</strong></li>
+<li><strong>Boolean()</strong></li>
+<li><strong>Array()</strong></li>
+<li><strong>Object()</strong></li>
+<li><strong>Function()</strong></li>
+<li><strong>Date()</strong></li>
+<li><strong>RegExp()</strong></li>
+<li><strong>Error()</strong></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="ES2015"><a href="#ES2015" class="headerlink" title="ES2015"></a>ES2015</h2><h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><ul>
+<li><p><strong>const 命令</strong>：声明常量</p>
+</li>
+<li><p><strong>let 命令</strong>：声明变量</p>
+</li>
+<li><p>作用域</p>
+<ul>
+<li><strong>全局作用域</strong></li>
+<li><strong>函数作用域</strong>：<span style="background-color: #fff5f5;color: #ff502c;">function() {}</span></li>
+<li><strong>块级作用域</strong>：<span style="background-color: #fff5f5;color: #ff502c;">{}</span></li>
+</ul>
+</li>
+<li><p>作用范围</p>
+<ul>
+<li><span style="background-color: #fff5f5;color: #ff502c;">var 命令</span>在全局代码中执行</li>
+<li><span style="background-color: #fff5f5;color: #ff502c;">const 命令和 let 命令</span>只能在代码块中执行</li>
+</ul>
+</li>
+<li><p>赋值使用</p>
+<ul>
+<li><span style="background-color: #fff5f5;color: #ff502c;">const 命令</span>声明变量必须赋值</li>
+<li><span style="background-color: #fff5f5;color: #ff502c;">let 命令</span>声明变量后可立马赋值或使用后赋值</li>
+</ul>
+</li>
+<li><p>声明方法：<span style="background-color: #fff5f5;color: #ff502c;">var</span>、<span style="background-color: #fff5f5;color: #ff502c;">const</span>、<span style="background-color: #fff5f5;color: #ff502c;">let</span>、<span style="background-color: #fff5f5;color: #ff502c;">function</span>、<span style="background-color: #fff5f5;color: #ff502c;">class</span>、<span style="background-color: #fff5f5;color: #ff502c;">import</span></p>
+</li>
+<li><p>不允许重复声明变量：<span style="background-color: #fff5f5;color: #ff502c;">const</span>、<span style="background-color: #fff5f5;color: #ff502c;">let</span></p>
+</li>
+<li><p>未定义就会报错：<span style="background-color: #fff5f5;color: #ff502c;">const 命令</span>和<span style="background-color: #fff5f5;color: #ff502c;">let 命令</span>不存在变量提升</p>
+</li>
+<li><p>暂时性死区：在代码块内使用<span style="background-color: #fff5f5;color: #ff502c;">const 命令</span>和<span style="background-color: #fff5f5;color: #ff502c;">let 命令</span>声明变量之前，该变量都不可用</p>
+</li>
+</ul>
+<hr>
+<h3 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>字符串解构</strong>：<span style="background-color: #fff5f5;color: #ff502c;">const [ a, b, c, d, e ] = “baozi”</span></li>
+<li><input checked="" disabled="" type="checkbox"> <strong>数值解构</strong>：<span style="background-color: #fff5f5;color: #ff502c;">const {  toString: s  } = 123  // s === Number.prototype.toString</span></li>
+<li><input checked="" disabled="" type="checkbox"> <strong>布尔解构</strong>：<span style="background-color: #fff5f5;color: #ff502c;">const {  toString: b  } = true </span></li>
+<li><input checked="" disabled="" type="checkbox"> <strong>对象的结构</strong>：<ul>
+<li>形式：<span style="background-color: #fff5f5;color: #ff502c;">const { x, y } = { x : 1 , y : 2 }</span></li>
+<li>默认：<span style="background-color: #fff5f5;color: #ff502c;">const { x, y = 1 } = { x : 1 , y : 2 }</span></li>
+<li>改名：<span style="background-color: #fff5f5;color: #ff502c;">const { x, y : z } = { x : 1 , y : 2}</span></li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>数组解构</strong>：<ul>
+<li>规则：数据解构具有<span style="background-color: #fff5f5;color: #ff502c;">Iterator 接口</span>可采用数组形式的解构赋值</li>
+<li>形式：<span style="background-color: #fff5f5;color: #ff502c;">const [ x, y ] = [ 1, 2 ]</span></li>
+<li>默认：<span style="background-color: #fff5f5;color: #ff502c;">const [ x, y = 2 ] = [ 1 ]</span></li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>函数参数解构</strong>：<ul>
+<li>数组解构：<span style="background-color: #fff5f5;color: #ff502c;">function fn ( [ x = 1, y = 2 ] ) { }</span></li>
+<li>对象解构：<span style="background-color: #fff5f5;color: #ff502c;">function fn ( { x = 1, y = 2 } = {} ) {}</span></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="字符串拓展"><a href="#字符串拓展" class="headerlink" title="字符串拓展"></a>字符串拓展</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>Unicode 表示法</strong>：<span style="background-color: #fff5f5;color: #ff502c;">大括号包含</span>表示 Unicode 字符( <span style="background-color: #fff5f5;color: #ff502c;">\u{0xXX}</span>或<span style="background-color: #fff5f5;color: #ff502c;">\u{0xxx}</span> )</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>字符串遍历</strong>：可通过<span style="background-color: #fff5f5;color: #ff502c;">for-of</span>边离字符串</li>
+<li><input checked="" disabled="" type="checkbox"> **includes()**：是否存在指定字符串，返回一个布尔值</li>
+<li><input checked="" disabled="" type="checkbox"> **startsWith()**：是否存在字符串头部指定字符串，返回一个布尔值</li>
+<li><input checked="" disabled="" type="checkbox"> **endsWith()**：食肉存在字符串尾部指定字符串，返回一个布尔值</li>
+</ul>
+<hr>
+<h3 id="数值扩展"><a href="#数值扩展" class="headerlink" title="数值扩展"></a>数值扩展</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> **Number.parseInt()**：返回转换值得整数部分</li>
+<li><input checked="" disabled="" type="checkbox"> **Number.parseFloat()**：返回转换值得浮点数部分</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>Number.isNaN</strong>：是否为 NaN</li>
+</ul>
+<hr>
+<h3 id="对象拓展"><a href="#对象拓展" class="headerlink" title="对象拓展"></a>对象拓展</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>super 关键字</strong>：指向当前对象的原型对下个（只能用在对象的简写方法中<span style="background-color: #fff5f5;color: #ff502c;">method() {}</span>）</li>
+<li><input checked="" disabled="" type="checkbox"> **Object.is()**：对比两值是否相等</li>
+<li><input checked="" disabled="" type="checkbox"> **Object.assign()**：合并对象（浅拷贝），返回原对象</li>
+<li><input checked="" disabled="" type="checkbox"> **Object.getPrototypeOf()**：返回对象的原型对象</li>
+<li><input checked="" disabled="" type="checkbox"> **Object.setPrototypeOf()**：设置对象的原型对象</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>proto</strong>：返回或设置对象的原型对象</li>
+</ul>
+<p><strong>对象属性遍历</strong></p>
+<ul>
+<li>遍历<ul>
+<li><span style="background-color: #fff5f5;color: #ff502c;">for-in</span>：遍历对象<span style="background-color: #fff5f5;color: #ff502c;">自身可继承可枚举</span>属性</li>
+<li><span style="background-color: #fff5f5;color: #ff502c;">Object.keys()</span>：返回对象<span style="background-color: #fff5f5;color: #ff502c;">自身可枚举</span>属性键组成的数组</li>
+<li><span style="background-color: #fff5f5;color: #ff502c;">Object.values()</span>：返回对象<span style="background-color: #fff5f5;color: #ff502c;">自身可枚举</span>属性值的数组</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="数组拓展"><a href="#数组拓展" class="headerlink" title="数组拓展"></a>数组拓展</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>拓展运算符（…）</strong>：用于展开数组</li>
+<li><input checked="" disabled="" type="checkbox"> **Aarry.from()**：转换具有<span style="background-color: #fff5f5;color: #ff502c;">Iterator 接口</span>的数据解构为真正数组，返回新数组<ul>
+<li>类数组对象：<span style="background-color: #fff5f5;color: #ff502c;">包括 length 的对象</span>、<span style="background-color: #fff5f5;color: #ff502c;">Arguments 对象</span>、<span style="background-color: #fff5f5;color: #ff502c;">自身可枚举</span>、<span style="background-color: #fff5f5;color: #ff502c;">Nodelist 对象</span></li>
+<li>可遍历对象：<span style="background-color: #fff5f5;color: #ff502c;">String</span>、<span style="background-color: #fff5f5;color: #ff502c;">Set 结构</span>、<span style="background-color: #fff5f5;color: #ff502c;">Map 结构</span>、<span style="background-color: #fff5f5;color: #ff502c;">Generator 函数</span></li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> **Array.of()**：转换一组值为真正数组，返回新数组</li>
+<li><input checked="" disabled="" type="checkbox"> **copyWithin()**：把指定位置的成员复制到其他位置，返回原数组</li>
+<li><input checked="" disabled="" type="checkbox"> **find()**：返回一个符合条件的成员</li>
+<li><input checked="" disabled="" type="checkbox"> **findIndex()**：返回第一个符合条件的成员索引值</li>
+<li><input checked="" disabled="" type="checkbox"> **fill()**：根据指定值填充整个数组，返回原数组</li>
+<li><input checked="" disabled="" type="checkbox"> **keys()**：返回以索引值为遍历器的对象</li>
+<li><input checked="" disabled="" type="checkbox"> **values()**：返回以属性值为遍历器的对象</li>
+<li><input checked="" disabled="" type="checkbox"> **entries()**：返回以索引值和属性值为遍历器的对象</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>数组空位</strong>：ES6 明确将数组空位转为<span style="background-color: #fff5f5;color: #ff502c;">undefined</span>（空位处理不一，建议避免出现）</li>
+</ul>
+<hr>
+<h3 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h3><ul>
+<li><p><strong>定义</strong>：独一无二的值</p>
+</li>
+<li><p><strong>声明</strong>：<span style="background-color: #fff5f5;color: #ff502c;">cosnt set = Symbol(str)</span></p>
+</li>
+<li><p><strong>入参</strong>：字符串（可选）</p>
+</li>
+<li><p><strong>方法</strong></p>
+<ul>
+<li>**Symbol()**：创建以参数作为描述的<span style="background-color: #fff5f5;color: #ff502c;">Symbol 值</span>（不登记在全局环境）</li>
+<li>**Symbol.for()**：创建以参数作为描述的<span style="background-color: #fff5f5;color: #ff502c;">Symbol 值</span>，如存在此参数则返回原有的<span style="background-color: #fff5f5;color: #ff502c;">Symbol 值</span> （先搜索后船舰，等级在全局环境中）</li>
+<li>**Symbol.keyFor()**：返回已登记的<span style="background-color: #fff5f5;color: #ff502c;">Symbol 值</span>的描述(只能返回<span style="background-color: #fff5f5;color: #ff502c;">Symbol.for()</span><code>的</code><span style="background-color: #fff5f5;color: #ff502c;">key</span>)</li>
+<li>**Object.getOwnPropertySymbols()**：返回对象中所有用作属性名的<span style="background-color: #fff5f5;color: #ff502c;">Symbol 值</span>的数组</li>
+</ul>
+</li>
+<li><p><strong>内置</strong></p>
+<ul>
+<li><strong>Symbol.hasInstance</strong>：指向一个内部方法，当其他对象使用<span style="background-color: #fff5f5;color: #ff502c;">instanceof 运算符</span>判断是否为此对象的实例时会调用此方法</li>
+<li><strong>Symbol.isConcatSpreadable</strong>：指向一个布尔，定义对象用于<span style="background-color: #fff5f5;color: #ff502c;">Array.protorype.concat()</span>时是否可展开</li>
+<li><strong>Symbol.species</strong>：指向一个构造函数，当实例对象使用自身构造函数时会调用指定的构造函数</li>
+<li><strong>Symbol.match</strong>：指向一个函数，当实例对象被<span style="background-color: #fff5f5;color: #ff502c;">String.prototype.match()</span>调用时会重新定义<span style="background-color: #fff5f5;color: #ff502c;">match()</span>的行为</li>
+<li><strong>Symbol.replace</strong>：指向一个函数，当实例对象被、<span style="background-color: #fff5f5;color: #ff502c;">String.prototype.replace()</span>调用时会重新定义<span style="background-color: #fff5f5;color: #ff502c;">replace()</span>的行为</li>
+<li><strong>Symbol.search</strong>：指向一个函数，当实例对象被<span style="background-color: #fff5f5;color: #ff502c;">String.prototype.search()</span>调用时会重新定义<span style="background-color: #fff5f5;color: #ff502c;">search()</span>的行为</li>
+<li><strong>Symbol.split</strong>：指向一个函数，当实例对象被<span style="background-color: #fff5f5;color: #ff502c;">String.prototype.split()</span>调用时会重新定义<span style="background-color: #fff5f5;color: #ff502c;">split()</span>的行为</li>
+<li><strong>Symbol.iterator</strong>：指向一个默认遍历器方法，当实例对象执行<span style="background-color: #fff5f5;color: #ff502c;">for-of</span>时会调用指定的默认遍历器</li>
+<li><strong>Symbol.toPrimitive</strong>：指向一个函数，当实例对象被转为原始类型的值时会返回此对象对应的原始类型值</li>
+<li><strong>Symbol.toStringTag</strong>：指向一个函数，当实例对象被<span style="background-color: #fff5f5;color: #ff502c;">Object.prototype.toString()</span>调用时其返回值会出现在<span style="background-color: #fff5f5;color: #ff502c;">toString()</span>返回的字符串之中表示对象的类型</li>
+<li><strong>Symbol.unscopables</strong>：指向一个对象，指定使用<span style="background-color: #fff5f5;color: #ff502c;">with</span>时哪些属性会被<span style="background-color: #fff5f5;color: #ff502c;">with 环境</span>排除</li>
+</ul>
+</li>
+</ul>
+]]></content>
+  </entry>
+</search>
